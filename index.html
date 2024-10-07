@@ -120,6 +120,7 @@
                     file_div.innerText = file.split('/').pop().split('.')[0];
                     file_div.addEventListener('click', () => {
                         window.open(`./viewer.html?file=./files/${file.replace('./', '')}`);
+                        event.stopPropagation();
                     });
                 });
 
