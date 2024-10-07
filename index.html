@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>NCKU CSIE</title>
         <style>
             @font-face {
@@ -12,6 +13,19 @@
                 font-family: 'SAO';
                 src: url('./assets/fonts/SAOUITT-Regular.ttf');
             }
+            :root {
+                --xxx: 50px;
+                --xx: 35px;
+                --x: 30px;
+            }
+            @media (max-width: 768px)
+            {
+                :root {
+                    --xxx: 100px;
+                    --xx: 60px;
+                    --x: 40px;
+                }
+            }
             * {
                 margin: 0;
                 padding: 0;
@@ -21,6 +35,7 @@
             body {
                 background-color: #B7E0FF;
                 overflow-x: clip;
+                -webkit-tap-highlight-color: transparent;
             }
             .header {
                 margin: 20px;
@@ -30,11 +45,11 @@
             }
             .header_title {
                 font-weight: bold;
-                font-size: 50px;
+                font-size: var(--xxx);
             }
             .update {
                 font-family: 'SAO';
-                font-size: 30px;
+                font-size: var(--xx);
             }
             .subject {
                 margin: 10px;
@@ -45,12 +60,12 @@
             }
             .title {
                 margin: 10px;
-                font-size: 30px;
+                font-size: var(--xx);
                 font-weight: bold;
             }
             .title span {
                 font-family: 'SAO';
-                font-size: 20px;
+                font-size: var(--x);
                 margin-left: 10px;
             }
             .item {
@@ -66,7 +81,7 @@
                 border-radius: 10px;
                 transition: 0.5s;
                 cursor: pointer;
-                font-size: 20px;
+                font-size: var(--x);
             }
             .file:hover {
                 background-color: #E78F81;
