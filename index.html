@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NCKU CSIE</title>
+        <style>
+            @font-face {
+                font-family: '辰宇落雁體';
+                src: url('./assets/fonts/ChenYuluoyan-Thin-Monospaced.ttf');
+            }
+            @font-face {
+                font-family: 'SAO';
+                src: url('./assets/fonts/SAOUITT-Regular.ttf');
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: '辰宇落雁體';
+                user-select: none;
+            }
+            body {
+                background-color: #B7E0FF;
+                overflow-x: clip;
+            }
+            .header {
+                margin: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .header_title {
+                font-weight: bold;
+                font-size: xxx-large;
+            }
+            .update {
+                font-family: 'SAO';
+                font-size: xx-large;
+            }
+            .subject {
+                margin: 10px;
+                padding: 10px;
+                background-color: #FFF5CD;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+            .title {
+                margin: 10px;
+                font-size: xx-large;
+                font-weight: bold;
+            }
+            .title span {
+                font-family: 'SAO';
+                font-size: x-large;
+                margin-left: 10px;
+            }
+            .item {
+                background-color: #FFCFB3;
+                border-radius: 10px;
+            }
+            .hidden {
+                display: none;
+            }
+            .file {
+                margin: 5px 0;
+                padding: 10px;
+                border-radius: 10px;
+                transition: 0.5s;
+                transform-origin: left center;
+                cursor: pointer;
+                font-size: x-large;
+            }
+            .file:hover {
+                background-color: #E78F81;
+                scale: 1.2;
+                color: white;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <span class="header_title">NCKU CSIE</span>
+            <span class="update"></span>
+        </div>
+        <script>
+            const request = new XMLHttpRequest();
+            request.open('get', './files/files.json', false);
+            request.addEventListener('load', () => {
+                data = JSON.parse(request.responseText);
+            });
+            request.send();
+
+            const subject_files = data['files'];
+            const update_time = data['update'];
+            document.querySelector('.update').innerText = `update at ${update_time}`;
+
+            Object.keys(subject_files).forEach(subject => {
+                const files = subject_files[subject];
+
+                const subject_div = document.createElement('div');
+                document.body.appendChild(subject_div);
+                subject_div.classList.add('subject');
+
+                const subject_title = document.createElement('div');
+                subject_div.appendChild(subject_title);
+                subject_title.classList.add('title');
+                subject_title.innerText = subject;
+
+                const span = document.createElement('span');
+                subject_title.appendChild(span);
+                span.innerText = `[ ${files.length} ]`;
+
+                const item_div = document.createElement('div');
+                subject_div.appendChild(item_div);
+                item_div.classList.add('item');
+                item_div.classList.add('hidden');
+
+                files.forEach(file => {
+                    const file_div = document.createElement('div');
+                    item_div.appendChild(file_div);
+                    file_div.classList.add('file');
+                    file_div.innerText = file.split('/').pop().split('.')[0];
+                    file_div.addEventListener('click', () => {
+                        window.open(`./viewer.html?file=./files/${file.replace('./', '')}`);
+                    });
+                });
+
+                subject_div.addEventListener('click', () => {
+                    item_div.classList.toggle('hidden');
+                });
+            });
+        </script>
+    </body>
+</html>

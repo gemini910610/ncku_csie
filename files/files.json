@@ -1,0 +1,23 @@
+{
+    "files": {
+        "圖形理論": [
+            "./圖形理論/graph_theory_ch_1_202409.pdf"
+        ],
+        "軟體設計": [
+            "./軟體設計/Software Design Syllabus 2024.pdf",
+            "./軟體設計/Object-Oriented Programming Concept.pdf",
+            "./軟體設計/(補充)Dynamic Polymorphism典型使用結構與優點.pdf",
+            "./軟體設計/UML Class Diagram.pdf"
+        ],
+        "影像處理": [
+            "./影像處理/Chapter01_final 2024.pdf",
+            "./影像處理/Chapter02_final 2021.pdf",
+            "./影像處理/Chapter03  final 2023.pdf"
+        ],
+        "醫療影像處理專論": [
+            "./醫療影像處理專論/VARIATIONAL aUTO-EMDCODER.pdf",
+            "./醫療影像處理專論/VAE0927.pdf"
+        ]
+    },
+    "update": "2024-10-08 02:38"
+}
