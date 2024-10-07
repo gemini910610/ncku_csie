@@ -70,9 +70,12 @@
             }
             .item {
                 border-radius: 10px;
+                transition: var(--time) ease;
+                overflow: clip;
+                max-height: var(--height);
             }
             .hidden {
-                display: none;
+                max-height: 0px;
             }
             .file {
                 margin: 5px 0;
@@ -126,7 +129,6 @@
                 const item_div = document.createElement('div');
                 subject_div.appendChild(item_div);
                 item_div.classList.add('item');
-                item_div.classList.add('hidden');
 
                 files.forEach(file => {
                     const file_div = document.createElement('div');
@@ -138,6 +140,9 @@
                         event.stopPropagation();
                     });
                 });
+                
+                item_div.setAttribute('style', `--height: ${item_div.clientHeight}px; --time: ${files.length / 2}s`);
+                item_div.classList.add('hidden');
 
                 subject_div.addEventListener('click', () => {
                     item_div.classList.toggle('hidden');
