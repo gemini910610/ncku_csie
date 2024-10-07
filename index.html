@@ -68,7 +68,14 @@
                 cursor: pointer;
                 font-size: x-large;
             }
-            .file:hover {
+            @media (any-hover: hover) {
+                .file:hover {
+                    background-color: #E78F81;
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+            .file:active {
                 background-color: #E78F81;
                 color: white;
                 font-weight: bold;
