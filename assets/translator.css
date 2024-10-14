@@ -39,10 +39,13 @@
 .translator>div>div {
     padding: 10px;
     cursor: pointer;
-    border-left: 1px solid rgba(0, 0, 0, 0.5);
     font-family: 'SAO';
     flex: 1;
     text-align: center;
+}
+
+.translator #clear-button {
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .translator textarea {
