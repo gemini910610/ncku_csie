@@ -32,8 +32,6 @@
     background-color: rgba(255, 215, 196, 0.5);
     overflow: clip;
     display: flex;
-    align-items: center;
-    justify-content: right;
     border-left: 1px solid rgba(0, 0, 0, 0.5);
     border-right: 1px solid rgba(0, 0, 0, 0.5);
 }
@@ -43,6 +41,8 @@
     cursor: pointer;
     border-left: 1px solid rgba(0, 0, 0, 0.5);
     font-family: 'SAO';
+    flex: 1;
+    text-align: center;
 }
 
 .translator textarea {
