@@ -29,6 +29,7 @@ See https://github.com/adobe-type-tools/cmap-resources
         <title>PDF.js viewer</title>
         <link rel="resource" type="application/l10n" href="./assets/viewer.properties">
         <link rel="stylesheet" media="all" href="./assets/viewer.css" />
+        <link rel="stylesheet" href="./assets/translator.css">
         <script src="./assets/pdf.js"></script>
         <script src="./assets/viewer.js"></script>
     </head>
@@ -413,14 +414,21 @@ See https://github.com/adobe-type-tools/cmap-resources
                     </div>
                 </div>
             </div> <!-- overlayContainer -->
-
         </div> <!-- outerContainer -->
         <div id="printContainer"></div>
+        <div class="translator hidden-translator">
+            <textarea></textarea>
+            <div>TRANSLATE</div>
+            <textarea id="translate" readonly></textarea>
+            <div class="collapse"></div>
+        </div>
+        <div id="translate"></div>
+        <script>
+            const url = new URL(document.location.href);
+            const file = url.searchParams.get('file');
+            document.body.setAttribute('data-url', file);
+            document.title = file;
+        </script>
+        <script src="./assets/translate.js"></script>
     </body>
-    <script>
-        const url = new URL(document.location.href);
-        const file = url.searchParams.get('file');
-        document.body.setAttribute('data-url', file);
-        document.title = file;
-    </script>
 </html>
