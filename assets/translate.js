@@ -50,15 +50,22 @@ collapse.addEventListener('click', () =>
     translator.classList.toggle('hidden-translator');
 });
 
-const translate_button = document.querySelector('.translator div:not(.collapse)');
+const translate_button = document.querySelector('.translator #translate-button');
+const clear_button = document.querySelector('.translator #clear-button');
+const input_text = document.querySelector('.translator textarea');
 const translate_text = document.querySelector('.translator #translate');
 const set_translate_result = (result) =>
 {
     translate_text.value = result;
 }
+clear_button.addEventListener('click', () =>
+{
+    input_text.value = '';
+    translate_text.value = '';
+});
 translate_button.addEventListener('click', () =>
 {
-    const text = document.querySelector('.translator textarea').value;
+    const text = input_text.value;
     if (text === '')
     {
         return;

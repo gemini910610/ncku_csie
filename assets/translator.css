@@ -1,11 +1,16 @@
+@font-face {
+    font-family: 'SAO';
+    src: url('./fonts/SAOUITT-Regular.ttf');
+}
+
 .collapse {
     position: absolute;
-    top: -10px;
+    top: -20px;
     align-self: self-end;
     width: 50%;
-    height: 10px;
+    height: 20px;
     background-color: rgba(135, 162, 255, 0.75);
-    border-radius: 10px 10px 0 0;
+    border-radius: 20px 20px 0 0;
 }
 
 .translator {
@@ -23,7 +28,7 @@
     border-radius: 10px 10px 0 0;
 }
 
-.translator div:not(.collapse) {
+.translator>div:not(.collapse) {
     background-color: rgba(255, 215, 196, 0.5);
     overflow: clip;
     display: flex;
@@ -31,8 +36,13 @@
     justify-content: right;
     border-left: 1px solid rgba(0, 0, 0, 0.5);
     border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.translator>div>div {
     padding: 10px;
     cursor: pointer;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    font-family: 'SAO';
 }
 
 .translator textarea {
