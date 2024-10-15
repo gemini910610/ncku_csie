@@ -22,7 +22,7 @@
     bottom: 0;
     transition: 1s;
     width: var(--width);
-    height: calc(100vh - 32px);
+    height: calc(100% - 32px);
     display: flex;
     flex-direction: column;
     border-radius: 10px 0 0 0;
