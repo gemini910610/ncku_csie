@@ -2057,7 +2057,6 @@ var PDFViewerApplication = {
               return _context14.abrupt("return");
 
             case 9:
-              alert(document.querySelector('#viewerContainer').offsetWidth - document.querySelector('#viewerContainer').clientWidth);
               _this15.documentInfo = info;
               _this15.metadata = metadata;
               (_this15$_contentDispo = _this15._contentDispositionFilename) !== null && _this15$_contentDispo !== void 0 ? _this15$_contentDispo : _this15._contentDispositionFilename = contentDispositionFilename;

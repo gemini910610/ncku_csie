@@ -3,6 +3,16 @@
     src: url('./fonts/SAOUITT-Regular.ttf');
 }
 
+:root {
+    --scrollbar-width: 17px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --scrollbar-width: 0;
+    }
+}
+
 .collapse {
     position: absolute;
     left: -20px;
@@ -18,7 +28,7 @@
 .translator {
     background-color: rgba(0, 0, 0, 0.125);
     position: fixed;
-    right: 17px;
+    right: var(--scrollbar-width);
     bottom: 0;
     transition: 1s;
     width: var(--width);
