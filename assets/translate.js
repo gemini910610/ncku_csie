@@ -83,7 +83,7 @@ collapse.addEventListener('touchmove', (event) =>
         return;
     }
     translator.classList.add('no-transition');
-    translator.setAttribute('style', `--width: ${translator.getBoundingClientRect().right - event.pageX - 10}px`);
+    translator.setAttribute('style', `--width: ${translator.getBoundingClientRect().right - event.touches[0].pageX - 10}px`);
     translator.classList.remove('no-transition');
 });
 collapse.addEventListener('mouseup', (event) =>
@@ -95,7 +95,6 @@ collapse.addEventListener('touchend', (event) =>
 {
     end_position = event.pageX;
     resize = false;
-    event.preventDefault();
 });
 
 const translate_button = document.querySelector('.translator #translate-button');
