@@ -120,3 +120,4 @@ translate_button.addEventListener('click', () =>
     translate_text.value = 'translating...';
     translate(text, set_translate_result);
 });
+alert(document.querySelector('#mainContainer > div.toolbar').offsetHeight);
