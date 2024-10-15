@@ -61,6 +61,11 @@ collapse.addEventListener('mousedown', (event) =>
     start_position = event.pageX;
     resize = true;
 });
+collapse.addEventListener('touchstart', (event) =>
+{
+    start_position = event.pageX;
+    resize = true;
+});
 window.addEventListener('mousemove', (event) =>
 {
     if (!resize)
@@ -71,7 +76,22 @@ window.addEventListener('mousemove', (event) =>
     translator.setAttribute('style', `--width: ${translator.getBoundingClientRect().right - event.pageX - 10}px`);
     translator.classList.remove('no-transition');
 });
+window.addEventListener('touchmove', (event) =>
+{
+    if (!resize)
+    {
+        return;
+    }
+    translator.classList.add('no-transition');
+    translator.setAttribute('style', `--width: ${translator.getBoundingClientRect().right - event.pageX - 10}px`);
+    translator.classList.remove('no-transition');
+});
 collapse.addEventListener('mouseup', (event) =>
+{
+    end_position = event.pageX;
+    resize = false;
+});
+collapse.addEventListener('touchend', (event) =>
 {
     end_position = event.pageX;
     resize = false;
