@@ -45,9 +45,36 @@ const translate = (text, todo, target = 'traditional chinese') =>
 
 const translator = document.querySelector('.translator');
 const collapse = document.querySelector('.collapse');
+let start_position;
+let end_position;
+let resize = false;
 collapse.addEventListener('click', () =>
 {
+    if (Math.abs(start_position - end_position) > 10)
+    {
+        return;
+    }
     translator.classList.toggle('hidden-translator');
+});
+collapse.addEventListener('mousedown', (event) =>
+{
+    start_position = event.pageX;
+    resize = true;
+});
+window.addEventListener('mousemove', (event) =>
+{
+    if (!resize)
+    {
+        return;
+    }
+    translator.classList.add('no-transition');
+    translator.setAttribute('style', `--width: ${translator.getBoundingClientRect().right - event.pageX - 10}px`);
+    translator.classList.remove('no-transition');
+});
+collapse.addEventListener('mouseup', (event) =>
+{
+    end_position = event.pageX;
+    resize = false;
 });
 
 const translate_button = document.querySelector('.translator #translate-button');

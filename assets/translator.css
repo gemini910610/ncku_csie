@@ -5,32 +5,31 @@
 
 .collapse {
     position: absolute;
-    top: -20px;
+    left: -20px;
+    top: 20px;
     align-self: self-end;
-    width: 50%;
-    height: 20px;
+    height: 50%;
+    width: 20px;
     background-color: rgba(135, 162, 255, 0.75);
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px 0 0 20px;
+    cursor: pointer;
 }
 
 .translator {
     background-color: rgba(0, 0, 0, 0.125);
     position: fixed;
-    right: 10px;
+    right: 0;
     bottom: 0;
     transition: 1s;
-    width: 50%;
-    max-width: 500px;
+    width: var(--width);
     height: 90%;
     display: flex;
     flex-direction: column;
-    padding: 10px 10px 0 10px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 0 0 0;
 }
 
 .translator>div:not(.collapse) {
     background-color: rgba(255, 215, 196, 0.5);
-    overflow: clip;
     display: flex;
     border-left: 1px solid rgba(0, 0, 0, 0.5);
     border-right: 1px solid rgba(0, 0, 0, 0.5);
@@ -42,6 +41,7 @@
     font-family: 'SAO';
     flex: 1;
     text-align: center;
+    user-select: none;
 }
 
 .translator #clear-button {
@@ -60,7 +60,7 @@
 
 .translator textarea:not(#translate) {
     background-color: rgba(196, 215, 255, 0.5);
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 0 0 0;
 }
 
 #translate {
@@ -69,7 +69,10 @@
 }
 
 .hidden-translator {
-    height: 0px;
+    width: 0;
     border-radius: 0px;
-    padding: 0 10px;
+}
+
+.no-transition {
+    transition: none;
 }
