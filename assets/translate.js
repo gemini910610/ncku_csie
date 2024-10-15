@@ -95,6 +95,7 @@ collapse.addEventListener('touchend', (event) =>
 {
     end_position = event.pageX;
     resize = false;
+    event.preventDefault();
 });
 
 const translate_button = document.querySelector('.translator #translate-button');
