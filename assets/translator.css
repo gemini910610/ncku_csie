@@ -18,11 +18,11 @@
 .translator {
     background-color: rgba(0, 0, 0, 0.125);
     position: fixed;
-    right: 0;
+    right: 17px;
     bottom: 0;
     transition: 1s;
     width: var(--width);
-    height: 90%;
+    height: calc(100vh - 32px);
     display: flex;
     flex-direction: column;
     border-radius: 10px 0 0 0;
@@ -33,6 +33,7 @@
     display: flex;
     border-left: 1px solid rgba(0, 0, 0, 0.5);
     border-right: 1px solid rgba(0, 0, 0, 0.5);
+    overflow: clip;
 }
 
 .translator>div>div {
@@ -57,6 +58,7 @@
     flex: 1;
     padding: 10px;
     font-weight: bold;
+    transition: 1s;
 }
 
 .translator textarea:not(#translate) {
@@ -72,6 +74,10 @@
 .hidden-translator {
     width: 0;
     border-radius: 0px;
+}
+
+.hidden-translator textarea {
+    padding: 0;
 }
 
 .no-transition {
