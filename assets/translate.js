@@ -76,7 +76,7 @@ window.addEventListener('mousemove', (event) =>
     translator.setAttribute('style', `--width: ${translator.getBoundingClientRect().right - event.pageX - 10}px`);
     translator.classList.remove('no-transition');
 });
-window.addEventListener('touchmove', (event) =>
+collapse.addEventListener('touchmove', (event) =>
 {
     if (!resize)
     {
