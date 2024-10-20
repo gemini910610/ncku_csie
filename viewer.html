@@ -424,13 +424,14 @@ See https://github.com/adobe-type-tools/cmap-resources
             </div>
             <textarea id="translate" readonly></textarea>
             <div class="collapse"></div>
-        </div><div id="translate"></div>
+        </div>
+        <div id="translate"></div>
         <script>
             const url = new URL(document.location.href);
             const file = url.searchParams.get('file');
             document.body.setAttribute('data-url', file);
             document.title = file;
         </script>
-        <script src="./assets/translate.js"></script>
+        <script src="./assets/translator.js"></script>
     </body>
 </html>
