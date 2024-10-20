@@ -21,17 +21,14 @@
         <link rel="stylesheet" href="./assets/translator.css">
     </head>
     <body>
-        <iframe type="application/pdf" src="./files/論文/DDIM.pdf" frameborder="0"></iframe>
-        <div class="translator hidden-translator" style="--width: 50%">
-            <textarea></textarea>
-            <div>
-                <div id="translate-button">TRANSLATE</div>
-                <div id="clear-button">&ensp;&ensp;CLEAR&ensp;&ensp;</div>
-            </div>
-            <textarea id="translate" readonly></textarea>
-            <div class="collapse"></div>
-        </div>
-        <div id="translate"></div>
+        <iframe type="application/pdf" frameborder="0"></iframe>
+        <script>
+            const url = new URL(document.location.href);
+            const file = url.searchParams.get('file');
+            const iframe = document.querySelector('iframe');
+            iframe.src = file;
+            document.title = file;
+        </script>
         <script src="./assets/translator.js"></script>
     </body>
 </html>

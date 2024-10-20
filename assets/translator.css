@@ -5,11 +5,13 @@
 
 :root {
     --scrollbar-width: 17px;
+    --toolbar-height: 56px;
 }
 
 @media (max-width: 768px) {
     :root {
         --scrollbar-width: 0;
+        --toolbar-height: 32px;
     }
 }
 
@@ -23,6 +25,11 @@
     background-color: rgba(135, 162, 255, 0.75);
     border-radius: 20px 0 0 20px;
     cursor: pointer;
+    transition: 1s;
+}
+
+.opaque .collapse {
+    background-color: rgba(135, 162, 255);
 }
 
 .translator {
@@ -32,10 +39,14 @@
     bottom: 0;
     transition: 1s;
     width: var(--width);
-    height: calc(100% - 32px);
+    height: calc(100% - var(--toolbar-height));
     display: flex;
     flex-direction: column;
     border-radius: 10px 0 0 0;
+}
+
+.opaque {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .translator>div:not(.collapse) {
@@ -44,6 +55,11 @@
     border-left: 1px solid rgba(0, 0, 0, 0.5);
     border-right: 1px solid rgba(0, 0, 0, 0.5);
     overflow: clip;
+    transition: 1s;
+}
+
+.opaque>div:not(.collapse) {
+    background-color: rgb(255, 215, 196);
 }
 
 .translator>div>div {
@@ -74,11 +90,21 @@
 .translator textarea:not(#translate) {
     background-color: rgba(196, 215, 255, 0.5);
     border-radius: 10px 0 0 0;
+    transition: 1s;
+}
+
+.opaque textarea:not(#translate) {
+    background-color: rgb(196, 215, 255);
 }
 
 #translate {
     background-color: rgba(255, 244, 181, 0.5);
     border-bottom: none;
+    transition: 1s;
+}
+
+.opaque #translate {
+    background-color: rgb(255, 244, 181);
 }
 
 .hidden-translator {

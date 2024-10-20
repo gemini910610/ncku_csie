@@ -106,6 +106,7 @@
             });
             request.send();
 
+            const viewer = 'ontouchstart' in document.documentElement ? 'mobile_viewer.html' : 'desktop_viewer.html';
             const subject_files = data['files'];
             const update_time = data['update'];
             document.querySelector('.update').innerText = `update at ${update_time}`;
@@ -136,7 +137,7 @@
                     file_div.classList.add('file');
                     file_div.innerText = file.split('/').pop().split('.')[0];
                     file_div.addEventListener('click', () => {
-                        window.open(`./viewer.html?file=./files/${file.replace('./', '')}`);
+                        window.open(`./${viewer}?file=./files/${file.replace('./', '')}`);
                         event.stopPropagation();
                     });
                 });
