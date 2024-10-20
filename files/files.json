@@ -1,7 +1,8 @@
 {
     "files": {
         "圖形理論": [
-            "./圖形理論/graph_theory_ch_1_202409.pdf"
+            "./圖形理論/graph_theory_ch_1_202409.pdf",
+            "./圖形理論/graph_theory_ch_2.pdf"
         ],
         "軟體設計": [
             "./軟體設計/Software Design Syllabus 2024.pdf",
@@ -25,5 +26,5 @@
             "./論文/DDIM.pdf"
         ]
     },
-    "update": "2024-10-17 09:13"
+    "update": "2024-10-20 04:04"
 }
