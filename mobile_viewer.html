@@ -420,7 +420,7 @@ See https://github.com/adobe-type-tools/cmap-resources
             const url = new URL(document.location.href);
             const file = url.searchParams.get('file');
             document.body.setAttribute('data-url', file);
-            document.title = file;
+            document.title = file.split('/').pop().split('.')[0];
         </script>
         <script src="./assets/translator.js"></script>
     </body>

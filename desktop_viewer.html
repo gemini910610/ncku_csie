@@ -27,7 +27,7 @@
             const file = url.searchParams.get('file');
             const iframe = document.querySelector('iframe');
             iframe.src = file;
-            document.title = file;
+            document.title = file.split('/').pop().split('.')[0];
         </script>
         <script src="./assets/translator.js"></script>
     </body>
