@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                width: 100%;
+                height: 100vh;
+                overflow: clip;
+            }
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <link rel="stylesheet" href="./assets/translator.css">
+    </head>
+    <body>
+        <iframe type="application/pdf" src="./files/論文/DDIM.pdf" frameborder="0"></iframe>
+        <div class="translator hidden-translator" style="--width: 50%">
+            <textarea></textarea>
+            <div>
+                <div id="translate-button">TRANSLATE</div>
+                <div id="clear-button">&ensp;&ensp;CLEAR&ensp;&ensp;</div>
+            </div>
+            <textarea id="translate" readonly></textarea>
+            <div class="collapse"></div>
+        </div>
+        <div id="translate"></div>
+        <script src="./assets/translator.js"></script>
+    </body>
+</html>
