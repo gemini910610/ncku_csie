@@ -14,6 +14,11 @@
         --toolbar-height: 32px;
     }
 }
+@media (min-width: 768px) {
+    textarea {
+        font-size: 18px;
+    }
+}
 
 .collapse {
     position: absolute;

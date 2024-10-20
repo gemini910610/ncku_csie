@@ -97,19 +97,15 @@ collapse.addEventListener('click', () =>
     translator.classList.toggle('hidden-translator');
 });
 
-collapse.addEventListener('mousedown', (event) =>
+const mouse_down = (event) =>
 {
     start_position = event.pageX;
     resize = true;
-});
+}
+collapse.addEventListener('mousedown', mouse_down);
+collapse.addEventListener('touchstart', mouse_down);
 
-collapse.addEventListener('touchstart', (event) =>
-{
-    start_position = event.pageX;
-    resize = true;
-});
-
-window.addEventListener('mousemove', (event) =>
+const mouse_move = (event) =>
 {
     if (!resize)
     {
@@ -119,37 +115,21 @@ window.addEventListener('mousemove', (event) =>
     {
         return;
     }
+    const pageX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
     translator.classList.add('no-transition');
-    translator.setAttribute('style', `--width: ${translator.getBoundingClientRect().right - event.pageX - 10}px`);
+    translator.setAttribute('style', `--width: ${translator.getBoundingClientRect().right - pageX - 10}px`);
     translator.classList.remove('no-transition');
-});
+}
+window.addEventListener('mousemove', mouse_move);
+collapse.addEventListener('touchmove', mouse_move);
 
-collapse.addEventListener('touchmove', (event) =>
-{
-    if (!resize)
-    {
-        return;
-    }
-    if (translator.classList.contains('hidden-translator'))
-    {
-        return;
-    }
-    translator.classList.add('no-transition');
-    translator.setAttribute('style', `--width: ${translator.getBoundingClientRect().right - event.touches[0].pageX - 10}px`);
-    translator.classList.remove('no-transition');
-});
-
-collapse.addEventListener('mouseup', (event) =>
+const mouse_up = (event) =>
 {
     end_position = event.pageX;
     resize = false;
-});
-
-collapse.addEventListener('touchend', (event) =>
-{
-    end_position = event.pageX;
-    resize = false;
-});
+}
+collapse.addEventListener('mouseup', mouse_up);
+collapse.addEventListener('touchend', mouse_up);
 
 clear_button.addEventListener('click', () =>
 {
@@ -168,7 +148,7 @@ translate_button.addEventListener('click', () =>
     translate(text, set_translate_result);
 });
 
-translate_text.addEventListener('click', (event) =>
+const toggle_opaque = (event) =>
 {
     const current_time = event.timeStamp;
     if (current_time - last_time < 250)
@@ -176,4 +156,7 @@ translate_text.addEventListener('click', (event) =>
         translator.classList.toggle('opaque');
     }
     last_time = current_time;
-});
+    event.preventDefault();
+}
+translate_text.addEventListener('mousedown', toggle_opaque);
+translate_text.addEventListener('touchstart', toggle_opaque);
