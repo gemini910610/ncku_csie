@@ -10,7 +10,8 @@
             "./軟體設計/(補充)Dynamic Polymorphism典型使用結構與優點.pdf",
             "./軟體設計/UML Class Diagram.pdf",
             "./軟體設計/Code Structure View via UML Class Diagram.pdf",
-            "./軟體設計/Code Smells.pdf"
+            "./軟體設計/Code Smells.pdf",
+            "./軟體設計/Design Principles.pdf"
         ],
         "影像處理": [
             "./影像處理/Chapter01_final 2024.pdf",
@@ -27,5 +28,5 @@
             "./論文/DDIM.pdf"
         ]
     },
-    "update": "2024-10-24 09:11"
+    "update": "2024-11-07 09:11"
 }
