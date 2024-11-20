@@ -11,12 +11,14 @@
             "./軟體設計/UML Class Diagram.pdf",
             "./軟體設計/Code Structure View via UML Class Diagram.pdf",
             "./軟體設計/Code Smells.pdf",
-            "./軟體設計/Design Principles.pdf"
+            "./軟體設計/Design Principles.pdf",
+            "./軟體設計/Design Patterns.pdf"
         ],
         "影像處理": [
             "./影像處理/Chapter01_final 2024.pdf",
             "./影像處理/Chapter02_final 2021.pdf",
-            "./影像處理/Chapter03  final 2023.pdf"
+            "./影像處理/Chapter03  final 2023.pdf",
+            "./影像處理/newChapter042024.pdf"
         ],
         "醫療影像處理專論": [
             "./醫療影像處理專論/VARIATIONAL aUTO-EMDCODER.pdf",
@@ -28,5 +30,5 @@
             "./論文/DDIM.pdf"
         ]
     },
-    "update": "2024-11-07 09:11"
+    "update": "2024-11-20 22:59"
 }
