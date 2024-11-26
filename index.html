@@ -106,7 +106,8 @@
             });
             request.send();
 
-            const viewer = 'ontouchstart' in document.documentElement ? 'mobile_viewer.html' : 'desktop_viewer.html';
+            // const viewer = 'ontouchstart' in document.documentElement ? 'mobile_viewer.html' : 'desktop_viewer.html';
+            const viewer = 'mobile_viewer.html'; // temporary force mobile, because of desktop bug of page changing position
             const subject_files = data['files'];
             const update_time = data['update'];
             document.querySelector('.update').innerText = `update at ${update_time}`;
