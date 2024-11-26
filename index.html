@@ -143,7 +143,7 @@
                     });
                 });
                 
-                item_div.setAttribute('style', `--height: ${item_div.clientHeight}px; --time: ${files.length / 2}s`);
+                item_div.setAttribute('style', `--height: ${item_div.clientHeight}px; --time: ${Math.min(files.length / 2, 1.5)}s`);
                 item_div.classList.add('hidden');
 
                 subject_div.addEventListener('click', () => {
