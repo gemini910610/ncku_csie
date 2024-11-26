@@ -21,10 +21,8 @@
         <link rel="stylesheet" href="./assets/translator.css">
     </head>
     <body>
-        <iframe type="application/pdf" frameborder="0"></iframe>
+        <iframe type="application/x-google-chrome-pdf" frameborder="0"></iframe>
         <script>
-            document.documentElement.style.setProperty('--scrollbar-width', innerWidth - document.body.offsetWidth);
-
             const url = new URL(document.location.href);
             const file = url.searchParams.get('file');
             const iframe = document.querySelector('iframe');
