@@ -23,6 +23,8 @@
     <body>
         <iframe type="application/pdf" frameborder="0"></iframe>
         <script>
+            document.documentElement.setAttribute('--scrollbar-width', innerWidth - document.body.offsetWidth);
+
             const url = new URL(document.location.href);
             const file = url.searchParams.get('file');
             const iframe = document.querySelector('iframe');
