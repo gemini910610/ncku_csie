@@ -27,8 +27,9 @@
         ],
         "論文": [
             "./論文/Understanding Diffusion Models.pdf",
-            "./論文/DDIM.pdf"
+            "./論文/DDIM.pdf",
+            "./論文/U-Net.pdf"
         ]
     },
-    "update": "2024-11-20 22:59"
+    "update": "2024-11-27 14:16"
 }
