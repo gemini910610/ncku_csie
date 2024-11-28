@@ -12,7 +12,8 @@
             "./軟體設計/Code Structure View via UML Class Diagram.pdf",
             "./軟體設計/Code Smells.pdf",
             "./軟體設計/Design Principles.pdf",
-            "./軟體設計/Design Patterns.pdf"
+            "./軟體設計/Design Patterns.pdf",
+            "./軟體設計/Unit Testing.pdf"
         ],
         "影像處理": [
             "./影像處理/Chapter01_final 2024.pdf",
@@ -31,5 +32,5 @@
             "./論文/U-Net.pdf"
         ]
     },
-    "update": "2024-11-27 14:16"
+    "update": "2024-11-28 09:09"
 }
