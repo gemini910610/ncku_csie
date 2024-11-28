@@ -19,7 +19,9 @@
             "./影像處理/Chapter01_final 2024.pdf",
             "./影像處理/Chapter02_final 2021.pdf",
             "./影像處理/Chapter03  final 2023.pdf",
-            "./影像處理/newChapter042024.pdf"
+            "./影像處理/newChapter042024.pdf",
+            "./影像處理/CNN1.pdf",
+            "./影像處理/CHAPTER5.pdf"
         ],
         "醫療影像處理專論": [
             "./醫療影像處理專論/VARIATIONAL aUTO-EMDCODER.pdf",
@@ -32,5 +34,5 @@
             "./論文/U-Net.pdf"
         ]
     },
-    "update": "2024-11-28 09:09"
+    "update": "2024-11-29 01:18"
 }
