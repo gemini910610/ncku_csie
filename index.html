@@ -17,6 +17,8 @@
                 --xxx: 50px;
                 --xx: 35px;
                 --x: 30px;
+                --switch-button-size: 22.5px;
+                --switch-button-margin: calc((var(--switch-button-size) - var(--switch-button-size) / 1.618) / 2);
             }
             @media (max-width: 768px)
             {
@@ -91,6 +93,36 @@
                 color: white;
                 font-weight: bold;
             }
+            .switch {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                margin: 10px;
+                width: calc(var(--switch-button-size) * 2 + var(--switch-button-margin) * 2);
+                height: calc(var(--switch-button-size) + var(--switch-button-margin) * 2);
+                border-radius: calc((var(--switch-button-size) + var(--switch-button-margin) * 2) / 2); /* height / 2 */
+                cursor: pointer;
+                overflow: clip;
+                transition: 0.5s;
+                background-color: #9B7EBD;
+                box-shadow: inset rgba(0, 0, 0, 0.6) var(--switch-button-margin) var(--switch-button-margin) var(--switch-button-margin);
+            }
+            .switch div {
+                margin: var(--switch-button-margin);
+                max-width: var(--switch-button-size);
+                height: var(--switch-button-size);
+                border-radius: 50%;
+                transition: 0.5s;
+                background-color: #D4BEE4;
+                box-shadow: rgba(0, 0, 0, 0.6) var(--switch-button-margin) var(--switch-button-margin) var(--switch-button-margin);
+            }
+            .right {
+                transform: translateX(100%);
+                background-color: #F9C0AB;
+            }
+            .switch:has(.right) {
+                background-color: #FF4545;
+            }
         </style>
     </head>
     <body>
@@ -98,7 +130,24 @@
             <span class="header_title">NCKU CSIE</span>
             <span class="update"></span>
         </div>
+        <div class="switch">
+            <div></div>
+        </div>
         <script>
+            const switch_button = document.querySelector('.switch div');
+            const is_mobile = 'ontouchstart' in document.documentElement;
+            if (is_mobile)
+            {
+                switch_button.setAttribute('style', 'display: none;');
+            }
+            else
+            {
+                switch_button.parentElement.addEventListener('click', () =>
+                {
+                    switch_button.classList.toggle('right');
+                });
+            }
+
             const request = new XMLHttpRequest();
             request.open('get', './files/files.json', false);
             request.addEventListener('load', () => {
@@ -138,7 +187,8 @@
                     file_div.classList.add('file');
                     file_div.innerText = file.split('/').pop().split('.')[0];
                     file_div.addEventListener('click', () => {
-                        window.open(`./${viewer}?file=./files/${file.replace('./', '')}`);
+                        const url = switch_button.classList.contains('right') ? `./files/${file}` : `./${viewer}?file=./files/${file.replace('./', '')}`;
+                        window.open(url);
                         event.stopPropagation();
                     });
                 });
