@@ -28,8 +28,9 @@
             "./論文/Understanding Diffusion Models.pdf",
             "./論文/DDIM.pdf",
             "./論文/U-Net.pdf",
-            "./論文/Faster R-CNN.pdf"
+            "./論文/Faster R-CNN.pdf",
+            "./論文/DETR.pdf"
         ]
     },
-    "update": "2025-02-19 21:30"
+    "update": "2025-02-21 22:18"
 }
