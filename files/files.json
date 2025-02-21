@@ -29,8 +29,9 @@
             "./論文/DDIM.pdf",
             "./論文/U-Net.pdf",
             "./論文/Faster R-CNN.pdf",
-            "./論文/DETR.pdf"
+            "./論文/DETR.pdf",
+            "./論文/TransPose.pdf"
         ]
     },
-    "update": "2025-02-21 22:18"
+    "update": "2025-02-21 22:33"
 }
